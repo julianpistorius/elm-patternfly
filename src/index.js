@@ -1,4 +1,4 @@
-import './patternfly/patternfly.css';
+import '../node_modules/@patternfly/patternfly/patternfly.css';
 import './main.css';
 import { Elm } from './Main.elm';
 import * as serviceWorker from './serviceWorker';
