@@ -32,6 +32,7 @@ elm-app build
 - [ ] Move widgets out of Main.elm
 - [ ] Play with more PatternFly widgets (more complicated/interactive ones)
 - [ ] (Ongoing) Refine the API of the new Elm PatternFly widgets. Find inspiration from:
+    - [Elm Package Design Guidelines](https://package.elm-lang.org/help/design-guidelines)
     - [PatternFly React](https://www.patternfly.org/v4/documentation/react/components/button#props)
     - [Elm Bootstrap](https://github.com/rundis/elm-bootstrap)
     - [Elm UI](https://github.com/mdgriffith/elm-ui)
