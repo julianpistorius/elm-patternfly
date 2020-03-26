@@ -1,15 +1,14 @@
 {
-  "name": "elm-patternfly-poc",
-  "version": "1.0.0",
-  "description": "Proof of concept of using PatternFly from Elm",
-  "main": "index.js",
+  "name": "elm-patternfly",
+  "version": "0.0.1",
+  "description": "Using PatternFly from Elm",
+  "main": "src/index.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
   "license": "ISC",
   "devDependencies": {
     "@patternfly/patternfly": "^2.68.3"

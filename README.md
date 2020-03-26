@@ -1,4 +1,47 @@
-# Elm App
+# Elm PatternFly (Proof-of-Concept)
+
+Playing around with the simplest way to use [PatternFly](https://www.patternfly.org/) in Elm apps.
+
+## Quick start
+
+1. Install the 'Create Elm App' node package globally:
+
+```bash
+npm install -g elm-app
+```
+
+2. Clone this repository, and run the following commands from within your local repository:  
+
+```bash
+# Install dependencies, mainly the `patternfly` library
+npm install
+```
+
+```bash
+# Run a live-reloading development server
+elm-app start
+```
+
+```bash
+# Create an optimized production build suitable for deployment - see the 'build' directory
+elm-app build
+```
+
+## TODO
+
+- [ ] Move widgets out of Main.elm
+- [ ] Play with more PatternFly widgets (more complicated/interactive ones)
+- [ ] (Ongoing) Refine the API of the new Elm PatternFly widgets. Find inspiration from:
+    - [PatternFly React](https://www.patternfly.org/v4/documentation/react/components/button#props)
+    - [Elm Bootstrap](https://github.com/rundis/elm-bootstrap)
+    - [Elm UI](https://github.com/mdgriffith/elm-ui)
+- [ ] Experiment with theming
+- [ ] Combine PatternFly widgets with Elm UI (particularly using Elm UI for layout)
+- [ ] Use [Elm UI Explorer](https://github.com/kalutheo/elm-ui-explorer) to demo widgets as well as composite widgets and more complicated layouts
+    - Start with [Filtering](https://www.patternfly.org/v4/design-guidelines/usage-and-behavior/filters) for example
+- [ ] Use the [PatternFly Design Kit](https://www.patternfly.org/v4/get-started/designers) to lay out views and then convert to Elm 
+
+---
 
 This project is bootstrapped with [Create Elm App](https://github.com/halfzebra/create-elm-app).
 
