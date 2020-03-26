@@ -2,7 +2,7 @@ module Main exposing (..)
 
 import Browser
 import Html exposing (Html, div, h1, img, text)
-import Html.Attributes exposing (src)
+import Html.Attributes exposing (src, style)
 import Html.Events exposing (onClick)
 
 
@@ -24,12 +24,13 @@ init =
 
 
 type Msg
-    = NoOp
-    | Left
-    | Right
-    | SubmitForm
+    = SubmitForm
     | ResetForm
     | Cancel
+    | CheckFields
+    | LoadLink
+    | Beep
+    | ControlSomething
 
 
 type ButtonType
@@ -57,22 +58,8 @@ update msg model =
 ---- VIEW ----
 
 
-viewButton : String -> Html ()
-viewButton name =
-    Html.button [ onClick () ] [ text name ]
-
-
-submitButton : String -> Html ()
-submitButton name =
-    Html.button
-        [ Html.Attributes.type_ "submit"
-        , onClick ()
-        ]
-        [ text name ]
-
-
 pfButton : ButtonType -> ButtonVariant -> String -> Html ()
-pfButton buttonType buttonVariant name =
+pfButton buttonType buttonVariant label =
     let
         buttonTypeText =
             case buttonType of
@@ -112,22 +99,29 @@ pfButton buttonType buttonVariant name =
         [ Html.Attributes.type_ buttonTypeText
         , Html.Attributes.class "pf-c-button"
         , Html.Attributes.class buttonVariantText
+        , onClick ()
         ]
-        [ text name ]
+        [ text label ]
 
 
 view : Model -> Html Msg
 view model =
     div []
-        [ img [ src "/logo.svg" ] []
-        , h1 [] [ text "Your Elm App is working!" ]
+        [ img
+            [ src "/logo.svg"
+            , style "margin" "20px 0"
+            , style "max-width" "200px"
+            ]
+            []
+        , h1 [] [ text "Various buttons" ]
         , div []
-            [ Html.map (\_ -> Left) (viewButton "Left")
-            , Html.map (\_ -> Right) (viewButton "Right")
-            , Html.map (\_ -> SubmitForm) (submitButton "Submit form")
-            , Html.map (\_ -> SubmitForm) (pfButton Submit Primary "Submit form")
+            [ Html.map (\_ -> SubmitForm) (pfButton Submit Primary "Submit form")
             , Html.map (\_ -> ResetForm) (pfButton Reset Secondary "Reset form")
-            , Html.map (\_ -> Cancel) (pfButton Button Secondary "Cancel")
+            , Html.map (\_ -> CheckFields) (pfButton Button Tertiary "Check fields")
+            , Html.map (\_ -> Cancel) (pfButton Button Danger "Cancel")
+            , Html.map (\_ -> LoadLink) (pfButton Button Link "Link")
+            , Html.map (\_ -> Beep) (pfButton Button Plain "Beep")
+            , Html.map (\_ -> ControlSomething) (pfButton Button Control "Control Something")
             ]
         ]
 
